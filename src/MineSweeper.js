@@ -1,9 +1,9 @@
 (() => {
-  const SIZE_LENGHT = 20;
+  const SIZE_LENGTH = 20;
   const SIZE_HEIGHT = 20;
   const NUMBER_MINE = 5;
 
-  groundPositions = [SIZE_LENGHT][SIZE_HEIGHT];
+  groundPositions = [SIZE_LENGTH][SIZE_HEIGHT];
 
   window.stateBtn = {
     constructor(a,b) {
@@ -19,7 +19,7 @@
 
 
   function createGround() {
-    for(let i = 0; i< SIZE_LENGHT; i++){
+    for(let i = 0; i< SIZE_LENGTH; i++){
       for(let j = 0; j< SIZE_HEIGHT; j++){
        groundPositions[i][j] = new StateBtn(false,false);
       }
@@ -34,7 +34,7 @@
 
   function putMines(){
     for(let i = 0; i < NUMBER_MINE;i ++ ){
-      let a = getRandomInt(0,SIZE_LENGHT);
+      let a = getRandomInt(0,SIZE_LENGTH);
       let b = getRandomInt(0,SIZE_HEIGHT);
       if(groundPositions[a][b].isMine === true)i--;
       else groundPositions[a][b].isMine = true;
